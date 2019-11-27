@@ -7,11 +7,10 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import Google Hosted JQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="js/validaChamado.js"></script>
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="./css/materialize.min.css" media="screen,projection" />
     <link type="text/css" rel="stylesheet" href="./css/materialize.css" media="screen,projection" />
-    <link type="text/css" rel="stylesheet" href="./css/smiticket.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="./css/chamado.css" media="screen,projection" />
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
@@ -23,7 +22,7 @@
             <a href="#!" class="brand-logo mleft10"><img src="../../images/smi_logo.png"></a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="principal.html">Principal</a></li>
+                <li><a href="chamados">Chamados</a></li>
                 <li><a href="estatisticas.html">Estatisticas</a></li>
                 <li><a href="configuracoes.html">Configurações</a></li>
                 <li><a href="sair.html">Sair</a></li>
@@ -32,7 +31,7 @@
     </nav>
 
     <ul class="sidenav" id="mobile-demo">
-        <li><a href="principal.html">Principal</a></li>
+        <li><a href="chamados">Chamados</a></li>
         <li><a href="estatisticas.html">Estatisticas</a></li>
         <li><a href="configuracoes.html">Configurações</a></li>
         <li><a href="sair.html">Sair</a></li>
@@ -45,9 +44,17 @@
     <div class="clear-10"></div>
 
     <div class="row">
+        <div class="input-field col s10 offset-m1">
+            <i class="material-icons prefix">search</i>
+            <input type="text" name="filtro" class="filtrar-tabela" id="icon_prefix">
+            <label for="icon_prefix">Digite o títudo do chamado</label>
+        </div>
+    </div>
+
+    <div class="row">
         <table id="tabela-chamados" class="striped col m10 offset-m1">
             <thead>
-                <tr class="chamado">
+                <tr>
                     <th>Data / Hora</th>
                     <th>Título</th>
                     <th>Responsável</th>
@@ -56,9 +63,9 @@
                 </tr>
             </thead>
             <tbody>
-                <tr for (chamado in data.chamados)>
+                <tr class="chamado" for (chamado in data.chamados) id="${chamado.id}">
                     <td>${chamado.data_abertura}</td>
-                    <td>${chamado.titulo}</td>
+                    <td class="titulo">${chamado.titulo}</td>
                     <td>${chamado.responsavel}</td>
                     <td>${chamado.status}</td>
                     <td>${chamado.prioridade}</td>
@@ -162,6 +169,7 @@
         });
     </script>
     <script src="./js/acessar-chamado.js"></script>
+    <script src="./js/filtrar-chamado.js"></script>
 
 </body>
 

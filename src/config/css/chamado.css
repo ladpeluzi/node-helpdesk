@@ -1,0 +1,44 @@
+nav .nav-wrapper {
+  position: relative;
+  height: 100%;
+  background: #000;
+}
+.clear, .clear-10, .clear-15 {
+  clear: both;
+  height: 0; overflow: hidden; /* Précaution pour IE 7 */
+}
+.clear-10 {
+  margin-bottom: 10px
+}
+.clear-15 {
+  margin-bottom: 15px
+}
+.mleft10 {
+  margin-left: 10px;
+}
+.mleft15 {
+  margin-left: 15px;
+}
+.mright10 {
+  margin-right: 10px;
+}
+.mright15 {
+  margin-right: 150px;
+}
+
+.modal .modal-footer {
+    padding: 0px 30px;
+}
+.seleciona-chamado {
+    background-color: blueviolet;
+}
+
+.input-field .prefix .active {
+  color: black;
+  border-bottom: 1px solid #000 !important;
+}
+
+
+.invisivel {
+	display: none;
+}

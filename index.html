@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8" />
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import Google Hosted JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/validaChamado.js"></script>
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/smiticket.css" media="screen,projection" />
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo mleft10"><img src="images/smi_logo.png"></a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="principal.html">Principal</a></li>
+                <li><a href="estatisticas.html">Estatisticas</a></li>
+                <li><a href="configuracoes.html">Configurações</a></li>
+                <li><a href="sair.html">Sair</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="principal.html">Principal</a></li>
+        <li><a href="estatisticas.html">Estatisticas</a></li>
+        <li><a href="configuracoes.html">Configurações</a></li>
+        <li><a href="sair.html">Sair</a></li>
+    </ul>
+
+    <div class="clear-15"></div>
+    <div class="clear-15"></div>
+    <a class="waves-effect waves-light btn-small black mright10 right modal-trigger" href="#abrirChamado"><i class="material-icons left">add</i>Abrir Chamado</a>
+    <div class="clear-10"></div>
+    <div class="clear-10"></div>
+
+    <div class="row">
+        <table id="tabela-chamados" class="striped col m10 offset-m1">
+            <thead>
+                <tr class="chamado">
+                    <th>Data / Hora</th>
+                    <th>Título</th>
+                    <th>Responsável</th>
+                    <th>Status</th>
+                    <th>Prioridade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="1" class="chamado">
+                    <td>09/12/2019 - 14:28</td>
+                    <td>Newsletter Europcar Madrid</td>
+                    <td>Bianca Rocha</td>
+                    <td>Aberto</td>
+                    <td>Baixa</td>
+                </tr>
+                <tr id="2" class="chamado">
+                    <td>01/12/2019 - 15:13</td>
+                    <td>Criar conta de email agora.ehi@smi.net.br</td>
+                    <td>Monica Cooper</td>
+                    <td>Em andamento - Luciano Peluzi</td>
+                    <td>Média</td>
+                </tr>
+                <tr id="3" class="chamado">
+                    <td>29/11/2019 - 04:28</td>
+                    <td>Alteração de Ramal</td>
+                    <td>Maria Elias</td>
+                    <td>Aberto</td>
+                    <td>Alta</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="abrirChamado" class="modal">
+        <div class="modal-content">
+            <h4>Abrir Chamado</h4>
+            <div class="row">
+                <form class="col s12">
+
+                    <div class="row">
+                        <div class="input-field col s12 l6">
+                            <i class="material-icons prefix">title</i>
+                            <input id="icon_prefix" type="text" name="titulo">
+                            <label for="icon_prefix">Digite o títudo do chamado</label>
+                        </div>
+                        <div class="input-field col s12 l6">
+                            <i class="material-icons prefix">group</i>
+                            <select>
+                                <option value="" disabled selected>Selecione o departamento</option>
+                                <option value="eFactory">E. Factory</option>
+                                <option value="processVault">Process Vault</option>
+                                <option value="creativeLab">Creative Lab</option>
+                                <option value="thePowerhouse">The Powerhouse</option>
+                            </select>
+                            <label>Departamento</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12 l6">
+                            <i class="material-icons prefix">low_priority</i>
+                            <select>
+                                <option value="" disabled selected>Selecione a prioridade</option>
+                                <option value="1">Baixa</option>
+                                <option value="2">Média</option>
+                                <option value="3">Alta</option>
+                            </select>
+                            <label>Prioridade</label>
+                        </div>
+                        <div class="input-field col s12 l6">
+                            <i class="material-icons prefix">widgets</i>
+                            <select>
+                                <option value="" disabled selected>Selecione a categoria</option>
+                                <option value="1">Email</option>
+                                <option value="2">Europcaragents</option>
+                                <option value="3">Aenpro</option>
+                            </select>
+                            <label>Categoria</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="textarea2" class="materialize-textarea" data-length="1200"></textarea>
+                            <label for="textarea2">Descrição do chamado</label>
+                        </div>
+                    </div>
+
+                    <div class="file-field input-field">
+                        <div class="waves-effect waves-light btn-small black">
+                            <span>Arquivo(s)</span>
+                            <input type="file" multiple>
+                        </div>
+                        <div class="file-path-wrapper">
+                            <input class="file-path validate" type="text" placeholder="Anexar aquivos">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <div class="modal-footer mright15">
+            <button id="adicionarChamado" class="waves-effect waves-light btn-small black right modal-trigger" href="#">Abrir</button>
+        </div>
+    </div>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+            var elemsSidenav = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elemsSidenav, {});
+            var elemsModal = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elemsModal, {});
+            var elemsSelect = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elemsSelect, {});
+            $('input#input_text, textarea#textarea2').characterCounter();
+            // adicionar chamado
+            var botaoAdicionarChamado = document.querySelector('#adicionarChamado');
+
+            botaoAdicionarChamado.addEventListener("click", function() {
+                validaChamado();
+            });
+
+        });
+    </script>
+    <script src="js/acessar-chamado.js"></script>
+
+</body>
+
+</html>

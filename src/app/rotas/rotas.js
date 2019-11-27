@@ -13,7 +13,7 @@ module.exports = (app) => {
                         <meta charset="utf-8">
                     </head>
                     <body>
-                        <h1> chamados </h1>
+                        <h1> Chamados - log in </h1>
                     </body>
                 </html>
             `

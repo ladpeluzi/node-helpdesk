@@ -1,0 +1,4 @@
+sqlite3 chamados.db
+CREATE TABLE [chamados] ( 
+	[id] INTEGER  NOT NULL PRIMARY KEY
+);  
